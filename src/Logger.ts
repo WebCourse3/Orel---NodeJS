@@ -43,7 +43,7 @@ export class Logger{
 												  configuration.getLogLevel);
 	}
 
-	log(level: Levels, strings: string[]): void { // allow multiple strings to be sent.
+	log(level: Levels, strings: string[]): void {
 
 		let color = LevelsColor.White;
         let levelName = "";
@@ -92,7 +92,7 @@ export class Logger{
 		if (this.getConfiguration.getFile){
 
 			strings.forEach( currString => {
-				fs.appendFileSync("Logger.txt", levelName + ": " + currString + "\r\n");
+				fs.appendFileSync(this.getName, levelName + ": " + currString + "\r\n");
 			});
 		}
 	}

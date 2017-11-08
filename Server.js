@@ -16,7 +16,9 @@ app.get('/', function (req, res) {
 
 var configuration = new Configuration.Configuration(true, true, false, undefined);
 
-var logger = new Logger.Logger("Logger1", configuration);
+configuration.configurationByFile('./Configuration.json');
+
+var logger = new Logger.Logger("Logger.txt", configuration);
 
 logger.info(["info"]);
 logger.warning(["warning"]);
